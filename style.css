@@ -15,15 +15,13 @@ body{
     position: relative;
     top: 400px;
     z-index:1;
+    width: 20%;
+    height: 20%;
+}
+.conteiner{
+   
 }
 h1 {
-color: black;
-text-align: center;
+color: purple;
+margin-left: 15%;
 }
-
-
-    
-
-
-  
-  
