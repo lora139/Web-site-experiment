@@ -10,9 +10,13 @@ body {
 .slider{
 	width: 640px;
 	height: 426px;
+	background: url(/img/3.3.jpg);
+	background: url(/img/2.2.jpg);
+	background: url(/img/4.4.jpg);
 	background: url(/img/1.1.jpg);
 	margin: 100px auto; 
 	animation: slide 20s infinite; 
+	border-radius: 15px;
 }
 
 @keyframes slide{
@@ -37,22 +41,26 @@ ul {
   margin: 0;
   padding: 0;
   list-style: none;
+
 }
 
 a {
 	color: #34495e;
 }
+
 a {
 	text-decoration: none;
 }
 
 .logo {
 	margin: 0;
-	font-size: 1.45em;
+	font-size: 50px;
+	text-align: center;
 }
 
 .text {
 	margin-top: 5px;
+	
 }
 
 .text a {
@@ -63,10 +71,9 @@ a {
 }
 .text a {
     color: #34495e;
-    font-size: .99em;
-    flex-direction: row-reverse;
+    font-size: 20px;
+	flex-direction: row-reverse;
 }
-
 
 .text a:hover {
 	color: #718daa;
@@ -82,21 +89,18 @@ a {
 
 /* Media Queries */
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
 	.text {
 		display: flex;
+		
 	}
 	.header {
 		flex-direction: row;
-		align-items: center;
-    	
-		width: 80%;
-		margin: 0 auto;
-		max-width: 1150px;
+		align-items: center
 	}
 	}
 
-@media (min-width: 1024px) {
+@media (max-width: 1024px) {
 	.header {
 		flex-direction: row;
 		justify-content: space-between;
