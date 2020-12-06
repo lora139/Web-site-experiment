@@ -14,7 +14,7 @@ const fetchInstagramPhotos = async accountUrl => {
 
 (async () => {
   try {
-    const photos = await fetchInstagramPhotos('https://www.instagram.com/therock/');
+    const photos = await fetchInstagramPhotos('https://www.instagram.com/alliesherlock/');
     const container = document.getElementById('instagram-photos');
     photos.forEach(el => {
       const a = document.createElement('a');

@@ -6,6 +6,7 @@ body {
 	line-height: 1.6;
 	margin: 0;
 	min-height: 100vh;
+	background-color: #eee;
 }
 .slider{
 	width: 640px;
@@ -79,6 +80,22 @@ a {
 	color: #718daa;
 }
 
+.box{
+	width:90%;
+	height:200px;
+	background:#FFF;
+	margin:30px auto;
+	border-radius: 25px;
+}
+.content{
+	text-align: center;
+	padding: 25px;
+	letter-spacing: 2px;
+	color: rgb(189, 39, 39);
+	padding-bottom: 1px;
+	font-size: 14px;
+ 
+}
 .header {
 	padding-top: .5em;
 	padding-bottom: .5em;
