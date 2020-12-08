@@ -1,6 +1,6 @@
+
 * {
-	box-sizing: border-box;
-	
+	box-sizing: border-box;	
 }
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -9,63 +9,46 @@ body {
 	min-height: 100vh;
 	background-color: #eee;
 }
-
 .slider{
-	width: 640px;
-	height: 426px;
-	background: url(/img/3.3.jpg);
-	background: url(/img/2.2.jpg);
-	background: url(/img/4.4.jpg);
-	background: url(/img/1.1.jpg);
+	width: 1280px;
+	height: 320px;
+	background: url(/img/instagram1.jpg);
 	margin: 100px auto; 
-	animation: slide 20s infinite; 
+	animation: slide 30s infinite; 
 	border-radius: 15px;
 }
-
 @keyframes slide{
-20%{
-	background: url(/img/1.1.jpg);
+25%{
+	background: url(/img/instagram2.jpg);
 }
-40%{
-	background: url(/img/3.3.jpg);
+50%{
+	background: url(/img/instagram3.jpg);
 }
-60%{
-	background: url(/img/2.2.jpg);
-}
-80%{
-	background: url(/img/4.4.jpg);
+75%{
+	background: url(/img/instagram4.jpg);
 }
 100%{
-	background: url(/img/1.1.jpg);
+	background: url(/img/instagram1.jpg);
 }
 }
-
 ul {
-  margin: 0;
-  padding: 0;
   list-style: none;
-
 }
-
 a {
 	color: #34495e;
 }
-
 a {
 	text-decoration: none;
 }
-
 .logo {
 	margin: 0;
 	font-size: 50px;
 	text-align: center;
 }
-
 .text {
 	margin-top: 5px;
 	
 }
-
 .text a {
 	padding: 10px 15px;
 	text-transform: uppercase;
@@ -77,11 +60,9 @@ a {
     font-size: 20px;
 	flex-direction: row-reverse;
 }
-
 .text a:hover {
 	color: #718daa;
 }
-
 .box{
 	width:60%;
 	height:200px;
@@ -96,7 +77,6 @@ a {
 	color: rgb(189, 39, 39);
 	padding-bottom: 1px;
 	font-size: 14px;
- 
 }
 .header {
 	padding-top: .5em;
@@ -111,21 +91,20 @@ a {
 @media (min-width: 1024px) {
 	.text {
 		display: flex;
-		
+  justify-content: center;
 	}
 	.header {
 		flex-direction: row;
 		align-items: center
+	}	
 	}
-	
-	}
-	
-
-
 @media (max-width: 1024px) {
+	.text {	
+	}
 	.header {
 		flex-direction: row;
 		justify-content: space-between;
+
 	}
 	
 }
