@@ -1,37 +1,30 @@
-const instagramRegExp = new RegExp(/<script type="text\/javascript">window\._sharedData = (.*);<\/script>/);
-
-const fetchInstagramPhotos = async accountUrl => {
-  const response = await axios.get(accountUrl);
-  const json = JSON.parse(response.data.match(instagramRegExp)[1]);
-  const edges = json.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 12);
-  return edges.map(({ node }) => ({
-    url: `https://www.instagram.com/p/${node.shortcode}/`,
-    thumbnailUrl: node.thumbnail_src,
-    displayUrl: node.display_url,
-    caption: node.edge_media_to_caption.edges[0].node.text }));
-
-};
-
-(async () => {
+sync function instagramPhotos () {
+  // It will contain our photos' links
+  const res = []
+  
   try {
-    const photos = await fetchInstagramPhotos('https://www.instagram.com/photoshots1309/');
-    const container = document.getElementById('instagram-photos');
-    photos.forEach(el => {
-      const a = document.createElement('a');
-      const img = document.createElement('img');
+      const userInfoSource = await Axios.get('https://www.instagram.com/photoshots1309/')
 
-      a.setAttribute('href', el.url);
-      a.setAttribute('target', '_blank');
-      a.setAttribute('rel', 'noopener noreferrer');
-      a.classList.add('instagram-photo');
+      // userInfoSource.data contains the HTML from Axios
+      const jsonObject = userInfoSource.data.match(/<script type="text\/javascript">window\._sharedData = (.*)<\/script>/)[1].slice(0, -1)
 
-      img.setAttribute('src', el.thumbnailUrl);
-      img.setAttribute('alt', el.caption);
+      const userInfo = JSON.parse(jsonObject)
+      // Retrieve only the first 10 results
+      const mediaArray = userInfo.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges.splice(0, 10)
+      for (let media of mediaArray) {
+          const node = media.node
+          
+          // Process only if is an image
+          if ((node.__typename && node.__typename !== 'GraphImage')) {
+              continue
+          }
 
-      a.appendChild(img);
-      container.appendChild(a);
-    });
+          // Push the thumbnail src in the array
+          res.push(node.thumbnail_src)
+      }
   } catch (e) {
-    console.error('Fetching Instagram photos failed', e);
+      console.error('Unable to retrieve photos. Reason: ' + e.toString())
   }
-})();
+  
+  return res
+}
