@@ -86,9 +86,15 @@ a {
 	border-radius: 25px;
 }
 .photo{
-	margin: 50px;
-	
+	margin: 20px; /*distance between picturs*/
+	float: left; /*one row*/
+  	width: 300px;
+	padding: 5px;
 }
+.specification{
+	text-align: center;
+}
+
 
 /* Media Queries */
 

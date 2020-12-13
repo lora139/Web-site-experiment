@@ -1,4 +1,4 @@
-sync function instagramPhotos () {
+//sync function instagramPhotos () {
   // It will contain our photos' links
   const res = []
   
@@ -27,4 +27,4 @@ sync function instagramPhotos () {
   }
   
   return res
-}
+//}
