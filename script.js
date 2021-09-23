@@ -1,6 +1,6 @@
 //sync function instagramPhotos () {
   // It will contain our photos' links
-  const res = []
+ /* const res = []
   
   try {
       const userInfoSource = await Axios.get('https://www.instagram.com/photoshots1309/')
@@ -28,3 +28,5 @@
   
   return res
 //}
+*/
+

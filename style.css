@@ -3,20 +3,52 @@
 	box-sizing: border-box;	
 }
 body {
+	background-image: linear-gradient(#ffedd8,#f3d5b5,#e7bc91,#d4a276,#bc8a5f,#a47148 );
+	background-attachment: fixed;
 	font-family: 'Montserrat', sans-serif;
 	line-height: 1.6;
 	margin: 0;
 	min-height: 100vh;
 	background-color: #eee;
 }
-.slider{
-	width: 1280px;
-	height: 320px;
+
+.grid{
+	min-width: 95%;
+	height: 200%;
+	display: grid; /*grid- narejda*/
+	grid-template-columns:repeat(3, 1fr);
+	grid-auto-rows: minmax(100px,auto);
+  
+ }
+/*.slider{
+	width: 500px;
+	height: 500px;
 	background: url(/img/instagram1.jpg);
 	margin: 100px auto; 
 	animation: slide 30s infinite; 
 	border-radius: 15px;
 }
+*/
+.sidenav {
+	border: 1px solid;
+	border-radius: 10px;
+	width: 96%;
+	height: 96%;
+	margin-top: 2.5%; 
+	margin-left: 2.5%;
+	font-family: 'Times New Roman', Times, serif;
+  }
+  .sidenav::-webkit-scrollbar {
+	display: none;
+  }
+  .profile1{
+	border: 1px solid black;
+	margin: 10%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 95%;
+  }
 @keyframes slide{
 25%{
 	background: url(/img/instagram2.jpg);
@@ -41,34 +73,37 @@ a {
 	text-decoration: none;
 }
 .logo {
-	margin: 0;
-	font-size: 50px;
-	text-align: center;
+	margin: 10;
+	font-size: 30px;
+	margin-left: 1%;
+	text-align: left;
+}
+.logo a:hover {
+	color: #474a4c;
 }
 .text {
 	margin-top: 5px;
-	
 }
 .text a {
-	padding: 10px 15px;
+	padding: 5px 15px;
 	text-transform: uppercase;
 	text-align: center;
 	display: block;
 }
 .text a {
-    color: #34495e;
+    color: #182c41;
     font-size: 20px;
 	flex-direction: row-reverse;
 }
 .text a:hover {
-	color: #718daa;
+	color: #474a4c;
 }
-.box{
+/*.box{
 	width:60%;
 	height:200px;
 	background:#FFF;
-	margin:60px auto; /* auto- държи текста в средата*/
-	border-radius: 25px;
+	margin:10px auto; /* auto- държи текста в средата*/
+/*	border-radius: 25px;
 }
 .content{
 	text-align: center;
@@ -78,13 +113,16 @@ a {
 	padding-bottom: 1px;
 	font-size: 14px;
 }
+*/
 .header {
 	padding-top: .5em;
 	padding-bottom: .5em;
 	border: 1px solid #a2a2a2;
 	background-color: #4f97a3;
 	border-radius: 25px;
+	
 }
+
 .photo{
 	margin: 20px; /*distance between picturs*/
 	float: left; /*one row*/
@@ -94,7 +132,6 @@ a {
 .specification{
 	text-align: center;
 }
-
 
 /* Media Queries */
 
@@ -117,6 +154,17 @@ a {
 
 	}
 	
+}
+.footerbar {
+    background-color: rgb(94, 112, 117);
+    top: auto;
+    left: 0px;
+    height: 15%;
+    width: 100%;
+    position: absolute;
+    border-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 
